@@ -1,0 +1,675 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f4f4f4;
+    color: #222;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Merriweather', serif;
+}
+
+header{
+    background:
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('https://upload.wikimedia.org/wikipedia/commons/4/47/Katse_Dam.jpg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    height: 25vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: white;
+
+    animation: fadeDown 1.2s ease;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+nav {
+    background: #145da0;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffd166;
+}
+
+.section-title {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 2rem;
+    color: #0d3b66;
+    animation: fadeUp 1s ease;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 30px;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.gallery-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.map-container {
+    width: 90%;
+    margin: auto;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 25px;
+    text-decoration: none;
+    color: white;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.social:hover {
+    transform: translateY(-5px);
+}
+
+.facebook { background: #1877f2; }
+.instagram { background: #e4405f; }
+.twitter { background: #1da1f2; }
+.whatsapp { background: #25d366; }
+
+.contact-title {
+    text-align: center;
+    margin-top: 40px;
+    color: #0d3b66;
+}
+
+.contact-box{
+    background: white;
+    max-width: 700px;
+    margin: auto;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.contact-box p{
+    margin: 15px 0;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+
+footer {
+    background: #0d3b66;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Poppins', sans-serif;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    margin: 20px 0;
+}
+
+thead {
+    background: linear-gradient(135deg, #2c3e50, #4ca1af);
+    color: #ffffff;
+}
+
+thead th {
+    text-align: left;
+    padding: 16px 18px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+tbody tr {
+    border-bottom: 1px solid #eee;
+    transition: all 0.25s ease;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9fbfc;
+}
+
+tbody tr:hover {
+    background-color: #eaf6f9;
+    transform: scale(1.01);
+}
+
+td {
+    padding: 14px 18px;
+    font-size: 14px;
+    color: #333;
+}
+
+tbody td:first-child {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.attractions-hero {
+    height: 100vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url('https://upload.wikimedia.org/wikipedia/commons/4/47/Katse_Dam.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    animation: heroZoom 12s infinite alternate ease-in-out;
+}
+
+.attractions-hero h1 {
+    font-size: 4rem;
+    animation: fadeDown 1.5s ease;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 30px;
+    padding: 60px 10%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+
+.card {
+    flex: 0 0 300px;
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transition: 0.4s ease;
+    opacity: 0;
+    animation: fadeUp 1s ease forwards;
+    scroll-snap-align: start;
+}
+
+.card:hover {
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: 0.6s ease;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+    filter: brightness(0.9);
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h2 {
+    color: #0d3b66;
+    margin-bottom: 10px;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heroZoom {
+    from {
+        background-size: 100%;
+    }
+    to {
+        background-size: 110%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .attractions-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+
+.reviews-section {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.reviews-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.reviews-container h2 {
+    font-size: 2rem;
+    color: #1a5f96;
+    margin-bottom: 30px;
+}
+
+.reviews-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.review-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    flex: 1;
+    min-width: 280px;
+    max-width: 500px;
+    text-align: left;
+    border-top: 4px solid #ff9f00;
+}
+
+.stars {
+    color: #ff9f00;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.review-card p {
+    font-style: italic;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.reviewer {
+    font-weight: bold;
+    color: #222;
+    display: block;
+}
+
+.main-footer {
+    background-color: #002855;
+    color: #ffffff;
+    padding: 60px 20px 20px 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-column h3 {
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.footer-links, .footer-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li, .footer-info li {
+    margin-bottom: 14px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+.footer-links a, .contact-text a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover, .contact-text a:hover {
+    color: #ff9f00;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.contact-icon {
+    background-color: #ff9f00;
+    color: #002855;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.contact-text {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    opacity: 0.9;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    font-size: 0.85rem;
+    opacity: 0.6;
+}
+.cards {
+  display: flex;
+  flex-direction: column;  
+  gap: 24px;                
+  padding: 40px 20px;
+  max-width: 1000px;       
+  margin: 0 auto;           
+}
+
+.card {
+  display: flex;
+  flex-direction: row;     
+  background-color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); 
+  overflow: hidden;         
+  align-items: stretch;     
+}
+
+.card img {
+  width: 35%;               
+  min-width: 250px;         
+  height: auto;             
+  object-fit: cover;        
+}
+
+.card-content {
+  width: 65%;               
+  padding: 30px;            
+  display: flex;
+  flex-direction: column;   
+  justify-content: center;  
+}
+
+.card-content h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #1a446c;
+  font-size: 1.6rem;
+}
+
+.card-content p {
+  margin: 0;
+  line-height: 1.6;
+  color: #333333;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #333333;
+}
+
+header {
+    background-color: #1a65a4;
+    text-align: center;
+    padding: 10px 0;
+    color: white;
+}
+
+nav {
+    background-color: #1a65a4;
+    padding: 15px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.hero {
+    background-color: #1a65a4;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 10%; 
+    gap: 40px;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 550px;
+    color: #ffffff;
+    z-index: 2;
+}
+
+.hero-text h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.hero .btn {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #1a65a4;
+    text-decoration: none;
+    padding: 14px 28px;
+    font-weight: bold;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.hero::after {
+    content: "";
+    flex: 1;
+    display: block;
+    min-width: 350px;
+    height: 380px;
+    background-image: url('https://lesotho-blanketwrap.com/wp-content/uploads/2017/08/Resize-Maliba-Panorama-2.jpg'); 
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+    
+    .hero::after {
+        min-width: 100%;
+        height: 250px;
+    }
+}
+
+.intro {
+    max-width: 800px;
+    margin: 60px auto;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.intro h2 {
+    margin-bottom: 15px;
+    color: #1a65a4;
+}
+
+.reviews-section {
+    background-color: #f8fafc;
+    padding: 60px 20px;
+}
+
+.reviews-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.reviews-container h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #1a65a4;
+}
+
+.reviews-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.review-card {
+    background: white;
+    flex: 1;
+    min-width: 280px;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
