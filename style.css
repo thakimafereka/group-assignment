@@ -529,7 +529,7 @@ body {
 }
 
 header {
-    background-color: #1a65a4;
+    background-color: linear-gradient;
     text-align: center;
     padding: 10px 0;
     color: white;
@@ -672,4 +672,192 @@ nav ul li a {
     padding: 25px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.booking-hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 12px;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Extra protection for readability */
+}
+
+.booking-hero p {
+    font-size: 1.3rem;
+    font-weight: 300;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Form Container Section */
+.booking-section {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.booking-card {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 600px;
+    padding: 35px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    margin-top: -30px; /* Pulls the card slightly over the hero image for a modern layered web look */
+}
+
+.booking-card h2 {
+    color: #2c3e50;
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #eaedf0;
+    padding-bottom: 10px;
+}
+
+/* Form Structural Layout */
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Puts Date and Guests side-by-side beautifully */
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .form-group {
+    flex: 1; /* Gives both inputs equal horizontal spacing */
+}
+
+/* Labels */
+label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #4a5568;
+    font-size: 0.95rem;
+}
+
+/* Text Fields, Selection Dropdowns, and Text Areas */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #334155;
+    background-color: #f8fafc;
+    transition: all 0.25s ease;
+}
+
+/* Dynamic Interaction Highlights */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #0d5ea7;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(13, 94, 167, 0.15);
+}
+
+textarea {
+    resize: vertical; /* Allows users to adjust height safely */
+}
+
+/* Submission Button Styling */
+button[type="submit"] {
+    width: 100%;
+    background-color: #0d5ea7;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #094377;
+}
+
+button[type="submit"]:active {
+    transform: scale(0.99);
+}
+ 
+}/* =========================
+   FIXED NAVIGATION
+========================= */
+nav{
+    background:#1f67a6;
+    height:70px;              /* same height everywhere */
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:999;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:35px;
+    margin:0;
+    padding:0;
+    flex-wrap:nowrap;
+}
+
+nav ul li{
+    display:flex;
+    align-items:center;
+    height:25px;
+}
+
+nav ul li a{
+    color:#fff;
+    text-decoration:none;
+    font-size:1rem;
+    font-weight:600;
+    line-height:1;
+    white-space:nowrap;   /* stops links moving down */
+    transition:.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active{
+    color:#ffd166;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media(max-width:768px){
+
+    nav{
+        height:auto;
+        padding:15px 10px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        gap:14px;
+    }
+
+    nav ul li{
+        height:auto;
+    }
+
+    nav ul li a{
+        font-size:.95rem;
+    }
 }
